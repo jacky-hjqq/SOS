@@ -1,0 +1,47 @@
+# model config
+backbone: "dinov3_vitl16" 
+patch_size: 16
+input_dims: [480, 640]
+ckpt_path: "ckpt/SOS_model.ckpt"
+
+hidden_size: 1024
+block_depth: 8
+num_heads: 16 
+dropout: 0.1
+
+# inference config
+method_name: "SOS"
+cls_thresh: 0.5
+dataset_name: "lmo"
+batch_size: 1
+condition_size: 224
+img_size: [480, 640]
+condition_dims: [224, 224]
+vis_mask_enable: True
+output_dir: "output"
+
+# refinement inference
+refinement:
+  min_instance_area: 500
+  crop_margin: 0.5
+
+# different dataset
+YCBV_Dataset:
+  data_root: '/media/tum/data1/datasets/bop-dataset'
+  condition_dir: 'templates'
+  obj_ids: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+
+LMO_Dataset:
+  data_root: '/media/tum/data1/datasets/bop-dataset'
+  condition_dir: 'templates'
+  obj_ids: [1, 5, 6, 8, 9, 10, 11, 12]
+
+HB_Dataset:
+  data_root: '/media/tum/data1/datasets/bop-dataset'
+  condition_dir: 'templates'
+  obj_ids: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33]
+
+TUDL_Dataset:
+  data_root: '/media/tum/data1/datasets/bop-dataset'
+  condition_dir: 'templates'
+  obj_ids: [1, 2, 3]

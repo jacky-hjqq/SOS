@@ -1,0 +1,16 @@
+einops
+hydra-core
+matplotlib
+numpy==1.26.4
+opencv-python==4.9.0.80
+Pillow
+pycocotools
+pytorch-lightning
+scipy
+timm
+torchmetrics
+tqdm
+ultralytics==8.0.135
+transformers
+wandb
+

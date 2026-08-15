@@ -1,0 +1,59 @@
+# training setup
+train_dataset: all
+use_cache: True
+use_weighted_sampling: True
+gso_weight: 0.5
+objaverse_weight: 0.5
+devices: [0,1]
+limit_train_batches: 16000
+batch_size: 1
+accumulate_grad_batches: 8
+num_condition_imgs: [1, 20] 
+condition_size: 224          
+ignore_index: -1
+
+# train augmentations
+augs:
+    random_crop: True
+    random_crop_ratio: 0.8
+    random_crop_scale: [0.7, 0.99] 
+    cojitter: True
+    cojitter_ratio: 0.5
+    color_jitter:
+        brightness: 0.3
+        contrast: 0.3
+        saturation: 0.3
+        p: 0.9
+    gray_scale: True
+    gau_blur: False
+
+# optimizer
+max_steps: 100000
+base_lr: 0.0001
+min_lr: 0.00001
+warmup_steps: 2000
+hold_steps: 50000
+decay_end_steps: 100000
+
+# model options
+backbone: "dinov3_vitl16" 
+patch_size: 16
+input_dims: [480, 640]
+
+condition_dims: [224, 224]
+hidden_size: 1024
+block_depth: 8
+num_heads: 16 
+dropout: 0.1
+
+# dataset
+GSO_Dataset:
+    data_root: '/media/tum/data2/GSO_data_unzip' 
+    cond_root: '/media/tum/data1/Experiment/data_cond/gso_render'
+Objaverse_Dataset:
+    data_root: '/media/tum/data2/objaverse_data_unzip'
+    cond_root: '/media/tum/data2/objaverse-xl/output'
+YCBV_Dataset:
+    data_root: '/media/tum/data1/datasets/bop-dataset'
+    condition_dir: 'templates'
+    obj_ids: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
