@@ -3,8 +3,7 @@
 <h1>SOS!: A Streamlined Object-Conditional Transformer for Model-free Segmentation</h1>
 
 <p>
-  <!-- Add the paper URL to the empty href when the arXiv preprint is available. -->
-  <a href=""><img src="https://img.shields.io/badge/arXiv-Paper-b31b1b" alt="arXiv paper"></a>
+  <a href="https://arxiv.org/pdf/2608.15295"><img src="https://img.shields.io/badge/arXiv-Paper-b31b1b" alt="arXiv paper"></a>
   <a href="https://sos-seg.github.io/"><img src="https://img.shields.io/badge/Project_Page-green" alt="Project Page"></a>
 </p>
 
@@ -40,8 +39,8 @@ unseen-object segmentation.
 
 ![Comparison of model-based pipelines and the model-free SOS pipeline](assets/SOS_teaser.jpg)
 
-*Comparison of model-based segmentation pipelines with our model-free,
-one-stage SOS pipeline.*
+_Comparison of model-based segmentation pipelines with our model-free,
+one-stage SOS pipeline._
 
 ## Installation
 
@@ -159,8 +158,8 @@ The condition PNG should show the object against a background that allows
 
 ![Qualitative segmentation results on the BOP benchmarks](assets/BOP_visualization.jpg)
 
-*Qualitative comparison with CNOS and SAM6D on the LMO, YCBV, and TUDL
-benchmarks.*
+_Qualitative comparison with CNOS and SAM6D on the LMO, YCBV, and TUDL
+benchmarks._
 
 The evaluator expects a BOP-style result filename and dataset annotations that
 include `scene_gt_coco.json`. Evaluate the default LMO output with:
